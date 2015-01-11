@@ -10,6 +10,8 @@
 		FA8481611A62B2B900C06569 /* BowlingGame.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8481601A62B2B900C06569 /* BowlingGame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA8481671A62B2B900C06569 /* BowlingGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA84815B1A62B2B900C06569 /* BowlingGame.framework */; };
 		FA84816E1A62B2B900C06569 /* BowlingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84816D1A62B2B900C06569 /* BowlingGameTests.swift */; };
+		FA8481781A62B36B00C06569 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8481771A62B36B00C06569 /* Game.swift */; };
+		FA8481791A62B36B00C06569 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8481771A62B36B00C06569 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		FA8481661A62B2B900C06569 /* BowlingGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA84816C1A62B2B900C06569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA84816D1A62B2B900C06569 /* BowlingGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameTests.swift; sourceTree = "<group>"; };
+		FA8481771A62B36B00C06569 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +74,8 @@
 		FA84815D1A62B2B900C06569 /* BowlingGame */ = {
 			isa = PBXGroup;
 			children = (
-				FA8481601A62B2B900C06569 /* BowlingGame.h */,
 				FA84815E1A62B2B900C06569 /* Supporting Files */,
+				FA8481771A62B36B00C06569 /* Game.swift */,
 			);
 			path = BowlingGame;
 			sourceTree = "<group>";
@@ -80,6 +83,7 @@
 		FA84815E1A62B2B900C06569 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA8481601A62B2B900C06569 /* BowlingGame.h */,
 				FA84815F1A62B2B900C06569 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -209,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8481781A62B36B00C06569 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA84816E1A62B2B900C06569 /* BowlingGameTests.swift in Sources */,
+				FA8481791A62B36B00C06569 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +325,7 @@
 		FA8481721A62B2B900C06569 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +335,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		FA8481731A62B2B900C06569 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

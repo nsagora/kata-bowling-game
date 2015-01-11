@@ -10,27 +10,56 @@ import UIKit
 import XCTest
 
 class BowlingGameTests: XCTestCase {
+
+    var g:Game = Game();
     
     override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        g = Game()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
+    private func rollMany(n:Int, pins:Int) {
+        for i in 0..<n {
+            g.roll(pins)
         }
     }
     
+    private func rollSpare() {
+        g.roll(5)
+        g.roll(5)
+    }
+    
+    private func rollStrike() {
+        g.roll(10)
+    }
+    
+    func testGutterGame () {
+        rollMany(20, pins: 0)
+        XCTAssertEqual(0, g.score())
+    }
+    
+    func testAllOnes() {
+        rollMany(20, pins: 1)
+        XCTAssertEqual(20, g.score())
+    }
+    
+    func testOneSpare() {
+        rollSpare()
+        g.roll(3)
+        rollMany(17, pins: 0)
+        XCTAssertEqual(16, g.score())
+    }
+    
+    func testOneStrike() {
+        rollStrike()
+        g.roll(3)
+        g.roll(4)
+        rollMany(16, pins: 0)
+        
+        XCTAssertEqual(24, g.score())
+    }
+    
+    func testPerfectGame() {
+        rollMany(12, pins: 10)
+        XCTAssertEqual(300, g.score())
+    }
 }

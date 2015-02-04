@@ -14,4 +14,4 @@
 	- at each frame
 	- number of pins down at each roll
 
-3. The last screen shows you the classament
+3. The last screen shows you the score table 

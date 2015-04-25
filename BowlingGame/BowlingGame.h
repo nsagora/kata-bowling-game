@@ -3,7 +3,7 @@
 //  BowlingGame
 //
 //  Created by Alex Cristea on 11/01/15.
-//  Copyright (c) 2015 Alex Cristea. All rights reserved.
+//  Copyright (c) 2015 iOS NSAgora. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
